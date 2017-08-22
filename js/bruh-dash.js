@@ -56,34 +56,67 @@ first: function first(arr) {
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop:   function(arr, n){
+  drop:     function(arr, n){
     for(var i = 0; i<arr.length; i++){
-      if(n === 1){
-        var oneLess = arr.shift()
-        //console.log(oneLess)
+      if(n === 0){
         return arr
-      }else if(n === 0){
+      }else if(n >= 0){
+        arr.splice(0, n);
         return arr
       }else{
-         arr.splice(0, n);
+        arr.shift()
         return arr
       }
     }
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
-
+  dropRight: function(arr, n) {
+    for(var i = 0; i<arr.length; i++){
+          if(n === 0){
+        return arr
+      }else if(n >= 0){
+        arr.splice(-n , n);
+        return arr
+      }else{
+        arr.pop()
+        return arr
+      }
+    }
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
-
+  take:   function(arr, n) {
+    for(var i =0; i<arr.length; i++){
+      if(n === 0){
+        return []
+      }else if(n > arr.length){
+        return arr
+      }else if(n > 0){
+        var nElem = arr.splice(0, n)
+        return nElem
+      }else{
+        var firstElem = arr.slice(0,1)
+        return firstElem
+      }
+    }
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
-
+  takeRight:  function(arr, n) {
+    for(var i =0; i<arr.length; i++){
+      if(n === 0){
+        return []
+      }else if(n > arr.length){
+        return arr
+      }else if(n > 0){
+        var nElem = arr.splice(-n, n)
+        return nElem
+      }else{
+        var firstElem = arr.splice(-1,1)
+        return firstElem
+      }
+    }
   },
 
   // fills elements of array with specified value from the start index
