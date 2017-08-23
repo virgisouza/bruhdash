@@ -37,7 +37,7 @@ first: function first(arr) {
   },
 
   // returns the index of the first matching element from left to right
-  lastIndexof:    function(arr, num) {
+  lastIndexOf:    function(arr, num) {
     for(var i = arr.length-1; i>=0; i--){
      // console.log(arr[i])
       
