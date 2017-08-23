@@ -22,43 +22,35 @@ first: function first(arr) {
   },
 
   // returns the index of the first matching element from left to right
-    indexOf: function(arr, num) {
+    indexOf:    function(arr, num) {
     for(var i = 0; i < arr.length; i++){
+     // console.log(arr[i])
+      
       if(arr[i] === num){
-     return arr.indexOf(num);
-      }else {
+        
+    return arr.indexOf(num);
+        
+      }else if((arr.indexOf(num))=== -1){
         return -1;
       }
     }
   },
 
-/*
-  indexOf: function(arr, val){
-    var result = 0;
-    for(var i = 0; i<arr.length; i++){
-      if(arr[i] === val){
-        result = i-1;
-      }else{
-        result = -1;
-      }
-      
-    }
-    return result;
-  },
-*/
   // returns the index of the first matching element from left to right
-  lastIndexof: function(arr, val){
-    var result = 0;
-    for(var i = arr.length  -1; i>=0; i--){
-      if(arr[i] === val){
-        result = i-1;
-      }else{
-        result = -1;
-      }
+  lastIndexof:    function(arr, num) {
+    for(var i = arr.length-1; i>=0; i--){
+     // console.log(arr[i])
       
+      if(arr[i] === num){
+        
+    return arr.indexOf(num);
+        
+      }else if((arr.indexOf(num))=== -1){
+        return -1;
+      }
     }
-    return result;
   },
+
 
   // returns an array with all elements except for the last element
   initial: function (arr) {
