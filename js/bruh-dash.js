@@ -22,15 +22,42 @@ first: function first(arr) {
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function (arr) {
+    indexOf: function(arr, num) {
     for(var i = 0; i < arr.length; i++){
-   return arr.indexOf(arr[i])
+      if(arr[i] === num){
+     return arr.indexOf(num);
+      }else {
+        return -1;
+      }
     }
   },
 
+/*
+  indexOf: function(arr, val){
+    var result = 0;
+    for(var i = 0; i<arr.length; i++){
+      if(arr[i] === val){
+        result = i-1;
+      }else{
+        result = -1;
+      }
+      
+    }
+    return result;
+  },
+*/
   // returns the index of the first matching element from left to right
-  lastIndexof: function () {
-
+  lastIndexof: function(arr, val){
+    var result = 0;
+    for(var i = arr.length  -1; i>=0; i--){
+      if(arr[i] === val){
+        result = i-1;
+      }else{
+        result = -1;
+      }
+      
+    }
+    return result;
   },
 
   // returns an array with all elements except for the last element
@@ -121,29 +148,80 @@ first: function first(arr) {
 
   // fills elements of array with specified value from the start index
   // up to but not including the end index
-  fill: function() {
-
+  fill:      function(arr, value, start, end) {
+    if(start >= 0 && end >= 0){
+      return arr.fill(value, start, end)
+    }else{
+      return arr.fill(value)
+    }
   },
+  
 
   // removes all given values from an array
-  pull: function () {
-
+  pull:    function(arr, values) {
+     for(var i = arr.length-1; i>=0; i--){
+       console.log(arr[i])
+       for(var j = 0; j<values.length; j++){
+       console.log(values[j])
+     if(arr[i] === values[j]){
+       arr.splice(i, 1);
+       
+         }
+       }
+     }
+   return arr; 
   },
+  
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
-
-  },
+  pullAt:   function(arr, index) {
+    //var emptyarr = []
+    for(var i = arr.length-1; i>=0; i--){
+      //console.log(arr[i])
+     for(var j = 0; j<index.length; j++){
+       //console.log(index[j])
+      if(i === index[j]){
+        arr.splice(index[j], 1);
+        
+        } 
+       
+       }
+        
+      }
+        return arr;
+    },
+     
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(arr, values) {
+     for(var i = arr.length-1; i>=0; i--){
+       console.log(arr[i])
+       for(var j = 0; j<values.length; j++){
+       console.log(values[j])
+     if(arr[i] === values[j]){
+       arr.splice(i, 1);
+       
+         }
+       }
+     }
+   return arr; 
   },
 
   // returns an array with specified values excluded
-  difference: function() {
-
+  difference: function(arr, values) {
+     for(var i = arr.length-1; i>=0; i--){
+       //console.log(arr[i])
+       for(var j = 0; j<values.length; j++){
+       //console.log(values[j])
+     if(arr[i] === values[j]){
+       arr.splice(i, 1);
+       
+         }
+       }
+     }
+   return arr; 
   },
+
 
   /*******************
    *  STRETCH GOALS! *
