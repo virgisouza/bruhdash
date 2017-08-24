@@ -220,14 +220,41 @@ first: function first(arr) {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
+  zip: function zip(arr1, arr2){
+  var emptyarr =[];
+  var finalarr = [];
+  
+  for(var i= 0; i<arr1.length;i++){
+   
+    emptyarr.push(arr1[i], arr2[i]);
+    var tuple = emptyarr.splice((0,2)[i]);
+     finalarr.push(tuple);
+    
+    
+  }
+  return finalarr;
+},
 
-  },
 
   // creates an array of grouped elements in their pre-zip configuration
-  unzip: function () {
+  unzip: function(arr){
+  var arr1 = [];
+  var arr2 = [];
+  var finalarr = [];
+  
+  for(var i= 0; i<arr.length;i++){
+   
+   arr1.push(arr[i][0]);
+   arr2.push(arr[i][1]);
+    
+    
+    }
+  
+  finalarr.push(arr1, arr2);
+  
+  return finalarr;
+},
 
-  },
 
   // creates an array of elements into groups of length of specified size
   chunk: function(){
